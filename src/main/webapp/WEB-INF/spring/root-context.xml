@@ -52,6 +52,13 @@
 	<context:component-scan base-package="kr.co.shop.order.repository"></context:component-scan>
 	<context:component-scan base-package="kr.co.shop.delivery.service"></context:component-scan>
 	<context:component-scan base-package="kr.co.shop.delivery.repository"></context:component-scan>
+<<<<<<< HEAD
+=======
+	<context:component-scan base-package="kr.co.shop.refund.service"></context:component-scan>
+	<context:component-scan base-package="kr.co.shop.refund.repository"></context:component-scan>
+	<context:component-scan base-package="kr.co.shop.deletedmember.service"></context:component-scan>
+	<context:component-scan base-package="kr.co.shop.deletedmember.repository"></context:component-scan>
+>>>>>>> 9a5eb680e5e403752acbe55d9ce7fd159688979a
 			
 		
 </beans>

@@ -37,6 +37,11 @@
 	<context:component-scan base-package="kr.co.shop.review.controller" />
 	<context:component-scan base-package="kr.co.shop.order.controller" />
 	<context:component-scan base-package="kr.co.shop.delivery.controller" />
+<<<<<<< HEAD
+=======
+	<context:component-scan base-package="kr.co.shop.refund.controller" />
+	<context:component-scan base-package="kr.co.shop.deletedmember.controller" />
+>>>>>>> 9a5eb680e5e403752acbe55d9ce7fd159688979a
 	
 	
 	
