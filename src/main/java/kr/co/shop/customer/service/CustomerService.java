@@ -10,4 +10,6 @@ public interface CustomerService {
 
 	CustomerDTO idCheck(Map<String, Object> map);
 
+	CustomerDTO read(String id);
+
 }

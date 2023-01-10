@@ -20,7 +20,6 @@ public class CustomerDAOImpl implements CustomerDAO{
 	@Override
 	public void insert(CustomerDTO dto) {
 		
-		
 		char sex = dto.getSex();
 		
 		if (sex == '1' || sex == '3') {
@@ -30,17 +29,6 @@ public class CustomerDAOImpl implements CustomerDAO{
 		}
 		
 		dto.setSex(sex);
-		
-		String cbirth = dto.getBirth();
-		cbirth = cbirth.substring(0, 4);
-		int birth = Integer.parseInt(cbirth);
-		
-		Calendar cal = Calendar.getInstance();
-		int year = cal.get(Calendar.YEAR);
-		
-		int age = year-birth;
-		
-		dto.setAge(age);
 		
 		session.insert(NS+".insert", dto);
 	}

@@ -5,6 +5,8 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,7 +22,17 @@ public class CustomerController {
 	@Inject
 	private CustomerService cSerivce;
 	
-
+	
+	@RequestMapping(value = "/read/{id}", method = RequestMethod.GET)
+	public String read(@PathVariable("id") String id, Model model) {
+		
+		CustomerDTO dto = cSerivce.read(id);
+		model.addAttribute("dto", dto);
+		
+		return "customer/read";
+	}
+	
+	
 	@RequestMapping(value= "/insert", method = RequestMethod.POST)
 	public String insert(CustomerDTO dto) {
 		

@@ -9,11 +9,12 @@
 	<insert id="insert">
 		INSERT INTO tbl_customer (id, pw, name, birth, age, sex, email, phone, address)
 		VALUES
-		(#{id}, #{pw}, #{name}, #{birth}, #{age}, #{sex}, #{email}, #{phone}, #{address})
+		(#{id}, #{pw}, #{name}, #{birth}, FLOOR(MONTHS_BETWEEN(SYSDATE, #{birth})/12), #{sex}, #{email}, #{phone}, #{address})
 	</insert>
 	
 	<select id="read" resultType="CustomerDTO">
-		SELECT * FROM tbl_customer WHERE id = #{id}
+		SELECT id, name, TO_CHAR(birth, 'yyyy-mm-dd') AS birth, 
+		phone, email, grade, point FROM tbl_customer WHERE id = #{id}
 	</select>
 	
 </mapper>

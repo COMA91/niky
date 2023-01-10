@@ -29,4 +29,11 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return dto;
 	}
+
+	@Override
+	public CustomerDTO read(String id) {
+		CustomerDTO dto = cDAO.read(id);
+		
+		return dto;
+	}
 }
