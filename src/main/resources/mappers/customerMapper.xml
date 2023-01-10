@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.co.shop.customer">
+
+	<insert id="insert">
+		INSERT INTO tbl_customer(
+		id, pw, name, birth, age, sex, email, phone, address)
+		VALUES
+		(#{id}, #{pw}, #{name} #{birth}, #{age}, #{sex}, #{email}, #{phone}, {#address})
+	
+	
+	</insert>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.co.shop.customer">
+
+	<insert id="insert">
+		INSERT INTO tbl_customer(
+		id, pw, name, birth, age, sex, email, phone, address)
+		VALUES
+		(#{id}, #{pw}, #{name} #{birth}, #{age}, #{sex}, #{email}, #{phone}, {#address})
+	
+	
+	</insert>
+>>>>>>> 9a5eb680e5e403752acbe55d9ce7fd159688979a
+</mapper>
