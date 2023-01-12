@@ -36,10 +36,4 @@ public class CustomerDAOImpl implements CustomerDAO{
 		
 		return session.selectOne(NS+".read", id);
 	}
-
-	@Override
-	public CustomerDTO login(CustomerDTO login) {
-		
-		return session.selectOne(NS+".login", login);
-	}
 }

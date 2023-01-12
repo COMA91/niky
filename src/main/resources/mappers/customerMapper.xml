@@ -6,25 +6,12 @@
   
 <mapper namespace="kr.co.shop.customer">
 
-	<select id="login" resultType="CustomerDTO">
-		SELECT id, name FROM tbl_customer WHERE id=#{id} AND pw=#{pw}
-	</select>
-
-	<select id="read" resultType="CustomerDTO">
-		SELECT id, name, TO_CHAR(birth, 'yyyy-mm-dd') AS birth, 
-		age, address, email, grade, point 
-		FROM tbl_customer 
-		WHERE id = #{id}
-	</select>
-	
-	<select id="idCheck" resultType="CustomerDTO">
-		SELECT id FROM tbl_customer WHERE id = #{id}	
-	</select>
-
 	<insert id="insert">
-		INSERT INTO tbl_customer(id, pw, name, birth, age, sex, email, phone, address)
+		INSERT INTO tbl_customer(
+		id, pw, name, birth, age, sex, email, phone, address)
 		VALUES
-		(#{id}, #{pw}, #{name}, #{birth}, FLOOR(MONTHS_BETWEEN(SYSDATE, #{birth})/12), #{sex}, #{email}, #{phone}, #{address})
+		(#{id}, #{pw}, #{name} #{birth}, #{age}, #{sex}, #{email}, #{phone}, {#address})
+	
 	
 	</insert>
 </mapper>

@@ -26,28 +26,7 @@
 		<beans:property name="maxUploadSize" value="10485760"></beans:property>	
 	</beans:bean>
 	
-	<beans:bean class="kr.co.shop.customer.interceptor.LoginInterceptor" id="loginInterceptor"></beans:bean>
-	<beans:bean class="kr.co.shop.customer.interceptor.LogoutInterceptor" id="logoutInterceptor"></beans:bean>
-	<beans:bean class="kr.co.shop.customer.interceptor.AuthInterceptor" id="authInterceptor"></beans:bean>
 	
-	
-	<interceptors>
-		<interceptor>
-			<mapping path="/customer/loginPost"/>
-			<beans:ref bean="loginInterceptor"/>
-		</interceptor>
-		
-		<interceptor>
-			<mapping path="/customer/logout"/>
-			<beans:ref bean="logoutInterceptor"/>
-		</interceptor>
-		
-		<interceptor>
-			<mapping path="/customer/insert"/>
-			<beans:ref bean="authInterceptor"/>
-		</interceptor>
-		
-	</interceptors>
 	
 	
 	
