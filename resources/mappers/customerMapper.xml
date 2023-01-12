@@ -6,6 +6,10 @@
   
 <mapper namespace="kr.co.shop.customer">
 
+	<delete id="delete">
+		DELETE FROM tbl_customer WHERE id=#{id} AND pw=#{pw}
+	</delete>
+
 	<update id="updatePw">
 		UPDATE tbl_customer SET pw=#{pw1}
 		WHERE id=#{id} AND pw=#{pw}

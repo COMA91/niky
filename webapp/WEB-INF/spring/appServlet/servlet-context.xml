@@ -23,7 +23,7 @@
 	
 	
 	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
-		<beans:property name="maxUploadSize" value="10485760"></beans:property>	
+		<beans:property name="maxUploadSize" value="5000485760"></beans:property>	
 	</beans:bean>
 	
 	<beans:bean class="kr.co.shop.customer.interceptor.LoginInterceptor" id="loginInterceptor"></beans:bean>
@@ -39,10 +39,13 @@
 		
 		<interceptor>
 			<mapping path="/customer/logout"/>
+			<mapping path="/customer/delete/**"/>
 			<beans:ref bean="logoutInterceptor"/>
 		</interceptor>
 		
 		<interceptor>
+			
+			<mapping path="/customer/delete/**"/>
 			<mapping path="/customer/update/**"/>
 			<mapping path="/customer/read/**"/>
 			<mapping path="/customer/updatepw/**"/>			

@@ -16,5 +16,8 @@ public interface CustomerDAO {
 
 	int updatePw(Map<String, String> map);
 
+	int delete(Map<String, String> map);
+
+
 
 }

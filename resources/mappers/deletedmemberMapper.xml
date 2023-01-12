@@ -6,4 +6,8 @@
   
 <mapper namespace="kr.co.shop.deletedmember">
 
+	<insert id="insert">
+		INSERT INTO tbl_deletedmember (id, name, email, grade, reason)
+		VALUES (#{id}, #{name}, #{email}, #{grade}, #{reason})
+	</insert>
 </mapper>

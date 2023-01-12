@@ -100,6 +100,9 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			
+			$("#customeroption").on("click", "#cdelete", function() {
+				location.assign("/customer/delete/${dto.id}");
+			});
 
 			$("#customeroption").on("click", "#cupdate", function() {
 				location.assign("/customer/update/${dto.id}");
@@ -110,12 +113,6 @@
 			});
 
 			
-			
-			function deletePwInput() {
-				$("#dpw").val("");
-				$("#dfailmsg").text("");
-			}
-
 		});
 	</script>
 

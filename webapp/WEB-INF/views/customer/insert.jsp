@@ -31,90 +31,85 @@
 </head>
 <body>
 	<div class="container">
-		<jsp:include page="../part_header.jsp"></jsp:include>
-	</div>
-	
-
-	<div class="container">
-		<img class="img-fluid mx-auto d-block mb-3"
-			src="#"
-			alt="">
-		<h1 class="mb-1 text-center">Sign up</h1>
-		<p class="fs-14 text-gray text-center mb-5">Join to Power mall!</p>
+		<div class="jumbotron">
+			<h1 class="display-4 text-center">
+				PowerMall<br> <br>회원 가입
+			</h1>
+		</div>
 
 		<form action="/customer/insert" method="post">
-
-			<div id="divid" class="col-sm-10 offset-sm-2">
-				<label for="id" class="col-sm-2 col-form-label">Id</label>
+			<div class="form-group row" id="dividp">
+				<label for="id" class="col-sm-2 col-form-label text-right">아이디</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="id" name="id" required>
 				</div>
-			</div>
-			<div id="divpw" class="col-sm-10 offset-sm-2">
-				<label for="pw1" class="col-sm-2 col-form-label">Pw</label>
-				<div class="col-sm-8">
-					<input type="password" class="form-control" id="pw1" name="pw1"
-						required>
+				<div class="col-sm-2 text-right">
+					<button class="btn btn-info" id="idcheck">중복확인</button>
 				</div>
+				<div id="divid" class="col-sm-10 offset-sm-2"></div>
 			</div>
-			<div id="divpw" class="col-sm-10 offset-sm-2">
-				<label for="pw2" class="col-sm-2 col-form-label">Pw Check</label>
-				<div class="col-sm-8">
-					<input type="password" class="form-control" id="pw2" name="pw2"
-						required>
-				</div>
-			</div>
-			<div id="divname" class="col-sm-10 offset-sm-2">
-				<label for="name" class="col-sm-2 col-form-label">Name</label>
+
+			<div class="form-group row">
+				<label for="name" class="col-sm-2 col-form-label text-right">이름</label>
 				<div class="col-sm-8">
 					<input class="form-control" id="name" name="name" required>
 				</div>
+				<div id="divid" class="col-sm-10 offset-sm-2"></div>
 			</div>
-			
-			<div id="divbirth" class="col-sm-8 offset-sm-2">
-				<label for="birth" class="col-sm-2 col-form-label">Birth</label>
-				<div class="col-sm-8">
-					<input class="form-control" id="birth" name="birth" type="date" required>
-				</div>
-				<label for="birth" class="col-sm-4 col-form-label">Sex</label>
-				<div class="col-sm-2 margin-left-1">
-					<input class="form-control" type="number" id="sex" name="sex" maxlength="1" required />
-				</div>
-	
-			</div>
-			
 
-			<div id="divemail" class="col-sm-10 offset-sm-2">
-				<label for="email" class="col-sm-2 col-form-label">Email</label>
+			<div class="form-group row">
+				<label for="pw" class="col-sm-2 col-form-label text-right">비밀번호</label>
 				<div class="col-sm-8">
-					<input type="email" class="form-control" id="email" name="email"
-						placeholder="name@example.com" required />
-				</div>
-			</div>
-			<div id="divphone" class="col-sm-10 offset-sm-2">
-				<label for="phone" class="col-sm-2 col-form-label">phone</label>
-				<div class="col-sm-8">
-					<input type="text" class="form-control" pattern="[0-9]+" id="phone"
-						name="phone" placeholder="-제외하고 숫자만 입력" maxlength="11" required />
+					<input type="password" class="form-control" id="pw" name="pw"
+						required>
 				</div>
 			</div>
 
-			<div id="divAddress" class="col-sm-10 offset-sm-2">
-				<label for="Address" class="col-sm-2 col-form-label">Address</label>
+
+			<div class="form-group row">
+				<label for="birth" class="col-sm-2 col-form-label text-right">생년월일</label>
+				<div class="col-sm-5">
+					<input class="form-control" id="birth" name="birth" type="date"
+						required>
+				</div>
+				-
+				<div class="col-sm-3 margin-left-1">
+					<input class="form-control" type="number" id="sex" name="sex" placeholder="주민등록번호 뒷자리 1자리" maxlength="1" required/>
+				</div>
+				<div id="divsex" class="col-sm-10 offset-sm-2"></div>
+			</div>
+
+			<div class="form-group row">
+				<label for="email" class="col-sm-2 col-form-label text-right">이메일</label>
 				<div class="col-sm-8">
-					<input class="form-control" id="address" name="address" required />
+					<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
 				</div>
 			</div>
+
+			<div class="form-group row">
+				<label for="phone" class="col-sm-2 col-form-label text-right">전화번호</label>
+				<div class="col-sm-8">
+					<input type="text" pattern="[0-9]+" class="form-control" id="phone" name="phone" placeholder="-제외하고 숫자만 입력" maxlength="11" required/>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label for="address" class="col-sm-2 col-form-label text-right">주소</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="address" name="address" required>
+				</div>
+			</div>
+
 
 			<div class="menus text-center mt-5">
 				
-					<button type="submit" class="btn btn-primary" id="divsubmitp">가입</button>
+					<button type="submit" class="btn btn-primary" id="divsubmit">가입</button>
 			
 				
 					<button type="submit" class="btn btn-primary" id="divsubmitexit">취소</button>
 				
 			</div>
-			</div>
+
 		</form>
 	</div>
 
@@ -122,8 +117,8 @@
 		$(document).ready(function() {
 			let idCheck = false;
 			
-			$("#divsubmitexit").click(function() {
-				location.assign("/");
+			$("#divsubmitexit").on("click", "button[type='submit']", function() {
+				location.assign("/home");
 			});
 			
 			$("#dividp").on("input", "#id", function() {
@@ -161,7 +156,7 @@
 			});
 			
 			
-			$("#divsubmitp").on("click", "#divsubmitp", function(event) {
+			$("#divsubmitp").on("click", "button[type='submit']", function(event) {
 				event.preventDefault();
 				msg = null;
 				if (idCheck) {
@@ -181,7 +176,7 @@
 
 				let pw = $("#pw").val();
 
-					if (pw1 == "") {
+					if (pw == "") {
 						$("#pw").focus();
 						return false;
 						}

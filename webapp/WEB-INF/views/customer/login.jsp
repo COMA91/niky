@@ -14,7 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <script src="/resources/js/templateform.js"></script>
 </head>
-<body>
+<body class="text-center">
 
 <div class="container">
 	<jsp:include page="../part_header.jsp"></jsp:include>
@@ -24,6 +24,7 @@
 		<form class="form-signin" action="/customer/loginPost" method="POST">
 			<img class="mb-4" src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg"
 				alt="" width="72" height="72">
+				<h1 class="h3 mb-3 font-weight-normal">PowerMall</h1>
 			<label for="id" class="sr-only">아이디</label> 
 			<input name="id" id="id" class="form-control my-4" placeholder="아이디를 입력하세요." required autofocus> 
 			<label for="pw" class="sr-only">비밀번호</label> 

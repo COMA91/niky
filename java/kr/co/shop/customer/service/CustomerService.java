@@ -18,4 +18,6 @@ public interface CustomerService {
 
 	int updatePw(Map<String, String> map);
 
+	int delete(Map<String, String> map);
+
 }

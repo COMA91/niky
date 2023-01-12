@@ -75,13 +75,11 @@
 					<input class="form-control" id="address" name="address" required value="${dto.address}">
 				</div>
 			</div>
-		
-			<div class="form-group row">
-    			<div class="col-sm-10" id="customersubmitchange">
-      				<button type="submit" class="btn btn-primary">수정</button>
-    			</div>
-    			<div class="col-sm-8" id="changesubmitexit">
-					<button type="submit" class="btn btn-primary">취소</button>
+			
+			<div class="menus text-center mt-5">
+    			<div id="customerupdsubmit">
+      				<button type="submit" class="btn btn-primary" id="customersubmitchange">수정</button>
+      				<button type="submit" class="btn btn-primary" id="changesubmitexit">취소</button>
 				</div>
   			</div>
 
@@ -90,11 +88,11 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			
-			$("#changesubmitexit").on("click", "button[type='submit']", function() {
+			$("#customerupdsubmit").on("click",	"#changesubmitexit", function() {
 				location.assign("/customer/read/${dto.id}");
 			});
 			
-			$("#customersubmitchange").on("click", "button[type='submit']", function(event) {
+			$("#customerupdsubmit").on("click", "#customersubmitchange", function(event) {
 				event.preventDefault();
 				
 				

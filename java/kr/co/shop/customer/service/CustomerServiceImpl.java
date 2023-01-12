@@ -60,4 +60,14 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		return result;
 	}
+
+	@Override
+	public int delete(Map<String, String> map) {
+		int result = cDao.delete(map);
+		
+
+		return result;
+	}
+
+
 }

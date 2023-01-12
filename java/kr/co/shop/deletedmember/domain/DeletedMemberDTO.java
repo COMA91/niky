@@ -9,20 +9,26 @@ public class DeletedMemberDTO implements Serializable {
 	private String name;
 	private String email;
 	private char grade;
+	private String reason;
 	private String deleteddate;
 	
 	public DeletedMemberDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DeletedMemberDTO(String id, String name, String email, char grade, String deleteddate) {
+	
+
+	public DeletedMemberDTO(String id, String name, String email, char grade, String reason, String deleteddate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.grade = grade;
+		this.reason = reason;
 		this.deleteddate = deleteddate;
 	}
+
+
 
 	public String getId() {
 		return id;
@@ -55,6 +61,20 @@ public class DeletedMemberDTO implements Serializable {
 	public void setGrade(char grade) {
 		this.grade = grade;
 	}
+	
+	
+
+	public String getReason() {
+		return reason;
+	}
+
+
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+
 
 	public String getDeleteddate() {
 		return deleteddate;

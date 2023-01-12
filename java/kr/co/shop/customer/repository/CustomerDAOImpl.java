@@ -58,4 +58,11 @@ public class CustomerDAOImpl implements CustomerDAO{
 		
 		return session.update(NS+".updatePw", map);
 	}
+
+	@Override
+	public int delete(Map<String, String> map) {
+		
+		
+		return session.delete(NS+".delete", map);
+	}
 }

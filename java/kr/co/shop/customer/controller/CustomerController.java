@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.shop.customer.domain.CustomerDTO;
 import kr.co.shop.customer.service.CustomerService;
+import kr.co.shop.deletedmember.service.DeletedMemberService;
 
 @Controller
 @RequestMapping("/customer")
@@ -22,6 +23,31 @@ public class CustomerController {
 
 	@Inject
 	private CustomerService cSerivce;
+	@Inject
+	private DeletedMemberService dSerive;
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	@ResponseBody
+	public String delete(@RequestParam Map<String, String> map) {
+		
+
+		int result = cSerivce.delete(map);
+		
+		
+		if (result > 0) {
+			dSerive.insert(map);
+			}
+		
+		return result+"";
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String deleteCS(@PathVariable("id") String id, Model model) {
+		CustomerDTO dto = cSerivce.read(id);
+		model.addAttribute("dto", dto);
+		
+		return "customer/delete";
+	}
 	
 	@RequestMapping(value = "/updatepw", method = RequestMethod.POST)
 	@ResponseBody
@@ -103,7 +129,7 @@ public class CustomerController {
 
 		cSerivce.insert(dto);
 		
-		return "/";
+		return "/home";
 		
 		
 	}

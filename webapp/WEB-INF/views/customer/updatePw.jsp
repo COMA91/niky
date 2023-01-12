@@ -69,20 +69,23 @@
 
 
 
-			<div class="form-group row" id="customerchangepw">
-    			<div class="col-sm-10">
-      				<button type="submit" class="btn btn-primary">변경</button>
+			<div class="menus text-center mt-5">
+				<div id="customerupdsubmit">
+      				<button type="submit" class="btn btn-primary" id="customerchangepw">변경</button>
+    				<button type="submit" class="btn btn-primary" id="customerchangepw_exit">취소</button>
     			</div>
-  			</div>
+    		</div>
 
 	</div>
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			
+			$("#customerupdsubmit").on("click", "#customerchangepw_exit", function() {
+				location.assign("/customer/read/${dto.id}");
+			});
 			
-			
-			$("#customerchangepw").on("click", "button[type='submit']", function() {
+			$("#customerupdsubmit").on("click", "#customerchangepw", function() {
 				
 				msg = "<span style='color:red;'>비밀번호를 입력하세요.</span>";
 				
