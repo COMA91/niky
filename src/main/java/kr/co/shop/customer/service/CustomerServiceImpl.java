@@ -27,6 +27,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		CustomerDTO dto = cDAO.read(id);
 		
+		
 		return dto;
 	}
 
@@ -35,5 +36,13 @@ public class CustomerServiceImpl implements CustomerService{
 		CustomerDTO dto = cDAO.read(id);
 		
 		return dto;
+	}
+
+	@Override
+	public CustomerDTO login(CustomerDTO login) {
+		
+		login = cDAO.login(login);
+
+		return login;
 	}
 }

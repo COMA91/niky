@@ -8,5 +8,7 @@ public interface CustomerDAO {
 
 	CustomerDTO read(String id);
 
+	CustomerDTO login(CustomerDTO login);
+
 
 }
