@@ -10,11 +10,5 @@
 		<package name="kr.co.shop.review.domain"/>
 		<package name="kr.co.shop.order.domain"/>
 		<package name="kr.co.shop.delivery.domain"/>
-		<package name="kr.co.shop.refund.domain"/>
-		<package name="kr.co.shop.deletedmember.domain"/>
-		<package name="kr.co.shop.deletedproduct.domain"/>
-		<package name="kr.co.shop.notice.domain"/>
-		<package name="kr.co.shop.qna.domain"/>
-		<package name="kr.co.shop.reply.domain"/>
 	</typeAliases>  
 </configuration>
