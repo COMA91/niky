@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
 	public CustomerDTO idCheck(Map<String, Object> map) {
 		String id = (String) map.get("id");
 		
-		CustomerDTO dto = cDao.read(id);
+		CustomerDTO dto = cDao.idCheck(id);
 		
 		
 		return dto;

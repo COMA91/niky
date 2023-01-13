@@ -18,6 +18,8 @@ public interface CustomerDAO {
 
 	int delete(Map<String, String> map);
 
+	CustomerDTO idCheck(String id);
+
 
 
 }

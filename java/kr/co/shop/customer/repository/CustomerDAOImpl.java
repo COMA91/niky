@@ -65,4 +65,10 @@ public class CustomerDAOImpl implements CustomerDAO{
 		
 		return session.delete(NS+".delete", map);
 	}
+
+	@Override
+	public CustomerDTO idCheck(String id) {
+		
+		return session.selectOne(NS+".idCheck", id);
+	}
 }

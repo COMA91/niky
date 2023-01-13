@@ -33,7 +33,6 @@ public class CustomerController {
 
 		int result = cSerivce.delete(map);
 		
-		
 		if (result > 0) {
 			dSerive.insert(map);
 			}

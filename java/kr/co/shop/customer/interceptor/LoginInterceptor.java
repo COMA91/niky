@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import kr.co.shop.customer.domain.CustomerDTO;
+
 public class LoginInterceptor extends HandlerInterceptorAdapter{
 
 	@Override
@@ -31,17 +33,17 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 	 	
 	 	Object login = map.get("login");
-	 	
+	 	CustomerDTO dto = (CustomerDTO) login;
 	 	if (login != null) {
 	 		session.setAttribute("login", login);
-
+	 		
 	 		String dest = (String)session.getAttribute("dest");
 	 		
 	 		if (dest==null) {
 	 			response.sendRedirect("/");
 		 		
 			}else {
-				if (dest.contains(session.getId())) {
+				if (dest.contains(dto.getId())) {
 					response.sendRedirect(dest);
 			 			
 				}else {
