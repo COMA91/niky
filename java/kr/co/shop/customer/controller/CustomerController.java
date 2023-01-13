@@ -16,33 +16,49 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.shop.customer.domain.CustomerDTO;
 import kr.co.shop.customer.service.CustomerService;
 import kr.co.shop.deletedmember.service.DeletedMemberService;
+import kr.co.shop.order.domain.OrderDTO;
+import kr.co.shop.order.service.OrderService;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
 
 	@Inject
-	private CustomerService cSerivce;
+	private CustomerService cService;
 	@Inject
-	private DeletedMemberService dSerive;
+	private DeletedMemberService dService;
+	@Inject
+	private OrderService oSerivce;
+	
+	@RequestMapping(value = {"/mypage","/mypage/{id}"}, method = RequestMethod.GET)
+	public String myPage(@PathVariable("id") String id, Model model) {
+		
+		CustomerDTO cDto = cService.read(id);
+		
+		model.addAttribute("cDto", cDto);
+		
+		
+		
+		return "customer/myPage";
+	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	@ResponseBody
 	public String delete(@RequestParam Map<String, String> map) {
 		
 
-		int result = cSerivce.delete(map);
+		int result = cService.delete(map);
 		
 		if (result > 0) {
-			dSerive.insert(map);
+			dService.insert(map);
 			}
 		
 		return result+"";
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	public String deleteCS(@PathVariable("id") String id, Model model) {
-		CustomerDTO dto = cSerivce.read(id);
+	public String delete(@PathVariable("id") String id, Model model) {
+		CustomerDTO dto = cService.read(id);
 		model.addAttribute("dto", dto);
 		
 		return "customer/delete";
@@ -51,7 +67,7 @@ public class CustomerController {
 	@RequestMapping(value = "/updatepw", method = RequestMethod.POST)
 	@ResponseBody
 	public String updatePw(@RequestParam Map<String, String> map) {
-		int result = cSerivce.updatePw(map);
+		int result = cService.updatePw(map);
 		
 		return result +"";
 	}
@@ -59,7 +75,7 @@ public class CustomerController {
 	@RequestMapping(value = "/updatepw/{id}", method = RequestMethod.GET)
 	public String updatePw(@PathVariable("id") String id, Model model) {
 		
-		CustomerDTO dto = cSerivce.read(id);
+		CustomerDTO dto = cService.read(id);
 		model.addAttribute("dto", dto);
 		
 		return "customer/updatePw";
@@ -68,14 +84,14 @@ public class CustomerController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	@ResponseBody
 	public String update(@RequestParam Map<String, String> map) {
-		int result = cSerivce.update(map);
+		int result = cService.update(map);
 		
 		return result+"";
 	}
 	
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
 	public String update(@PathVariable("id") String id, Model model) {
-		CustomerDTO dto = cSerivce.read(id);
+		CustomerDTO dto = cService.read(id);
 		model.addAttribute("dto", dto);
 		
 		return "customer/update";
@@ -91,7 +107,7 @@ public class CustomerController {
 	public void login(CustomerDTO login, Model model) {
 		
 		
-		login = cSerivce.login(login);
+		login = cService.login(login);
 		
 		model.addAttribute("login", login);
 		
@@ -105,7 +121,7 @@ public class CustomerController {
 	@RequestMapping(value = "/read/{id}", method = RequestMethod.GET)
 	public String read(@PathVariable("id") String id, Model model) {
 		
-		CustomerDTO dto = cSerivce.read(id);
+		CustomerDTO dto = cService.read(id);
 		model.addAttribute("dto", dto);
 		
 		return "customer/read";
@@ -115,7 +131,7 @@ public class CustomerController {
 	@ResponseBody
 	public String idCheck(@RequestParam Map<String, Object> map) {
 		int result = 0;
-		CustomerDTO dto = cSerivce.idCheck(map);
+		CustomerDTO dto = cService.idCheck(map);
 		if(dto==null) {
 			result = 1;
 		}
@@ -126,7 +142,7 @@ public class CustomerController {
 	@RequestMapping(value= "/insert", method = RequestMethod.POST)
 	public String insert(CustomerDTO dto) {
 
-		cSerivce.insert(dto);
+		cService.insert(dto);
 		
 		return "/home";
 		

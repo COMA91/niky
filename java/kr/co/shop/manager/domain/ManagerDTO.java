@@ -7,13 +7,15 @@ public class ManagerDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String name;
+	private String pw;
 	private String email;
 	private Integer phone;
 	private String address;
 	private char grade;
 	private String department;
 	private String position;
-	
+	private final String secretcode = "powermallmanagersecretcode1";
+
 	public ManagerDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -94,6 +96,12 @@ public class ManagerDTO implements Serializable {
 	public void setPosition(String position) {
 		this.position = position;
 	}
+
+	
+	public String getSecretcode() {
+		return secretcode;
+	}
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
