@@ -5,5 +5,52 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.co.shop.product">
-
+	<select id="list" resultType="ProductDTO">
+		select * from tbl_product
+		where upper (proname) like upper ('%'||#{keyword}||'%')
+		<include refid="searchPrice"></include>
+		<include refid="searchSex"></include>
+		<include refid="searchTag"></include>
+		order by pronum desc
+	</select>
+	
+	<sql id="searchPrice">
+		<if test="'minprice' != 0 or maxprice' != 9999999">
+			and price &gt; #{minprice} and price &lt; #{maxprice}
+		</if>
+	</sql>
+	
+	<sql id="searchSex">
+		<if test="sex != null">
+			<if test="sex == 'F'.toString()">
+				and upper (sex) like ('%'||'F'||'%')
+			</if>
+			<if test="sex == 'M'.toString()">
+				and upper (sex) like ('%'||'M'||'%')
+			</if>
+		</if>
+	</sql>
+	
+	<sql id="searchTag">
+		<if test="category != null">
+			<if test="category == 'shirt'.toString()">
+				and upper (category) like ('%'||'SHIRT'||'%')
+			</if>
+			<if test="category == 'pants'.toString()">
+				and upper (category) like ('%'||'PANTS'||'%')
+			</if>
+			<if test="category == 'underwear'.toString()">
+				and upper (category) like ('%'||'UNDERWEAR'||'%')
+			</if>
+			<if test="category == 'shoes'.toString()">
+				and upper (category) like ('%'||'SHOES'||'%')
+			</if>
+			<if test="category == 'outfit'.toString()">
+				and upper (category) like ('%'||'OUTFIT'||'%')
+			</if>
+			<if test="category == 'etc'.toString()">
+				and upper (category) like ('%'||'ETC'||'%')
+			</if>
+		</if>
+	</sql>
 </mapper>

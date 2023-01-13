@@ -44,6 +44,8 @@
 		</interceptor>
 		
 		<interceptor>
+			<mapping path="/customer/mypage"/>
+			<mapping path="/customer/mypage/**"/>
 			<mapping path="/customer/delete/**"/>
 			<mapping path="/customer/update/**"/>
 			<mapping path="/customer/read/**"/>
@@ -69,6 +71,7 @@
 	<context:component-scan base-package="kr.co.shop.notice.controller" />
 	<context:component-scan base-package="kr.co.shop.qna.controller" />
 	<context:component-scan base-package="kr.co.shop.reply.controller" />
+	<context:component-scan base-package="kr.co.shop.common.controller" />
 	
 	
 	

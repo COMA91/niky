@@ -212,7 +212,7 @@ var dokan = {"ajaxurl":"https:\/\/themes.getbootstrap.com\/wp-admin\/admin-ajax.
 								<a class="btn btn-sm btn-outline-secondary"
 									href="/customer/login">로그인</a>
 								<a class="btn btn-sm btn-outline-secondary"
-									href="/customer/insert">회원가입</a>
+									href="/common/insert">회원가입</a>
 							</c:when>
 							<c:otherwise>
 							${login.id}님

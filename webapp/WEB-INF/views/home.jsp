@@ -101,7 +101,7 @@
 								<a class="btn btn-sm btn-outline-secondary"
 									href="/customer/login">로그인</a>
 								<a class="btn btn-sm btn-outline-secondary"
-									href="/customer/insert">회원가입</a>
+									href="/common/insert">회원가입</a>
 							</c:when>
 							<c:otherwise>
 							${login.id}님
@@ -117,18 +117,20 @@
 		</div>
 	</div>
 </header>
-					
+
 		<div class="nav-scroller py-1 mb-2">
 			<nav class="nav d-flex justify-content-between">
-				<a class="p-2 text-muted" href="#">woman</a> <a
-					class="p-2 text-muted" href="#">man</a> <a class="p-2 text-muted"
-					href="#">shoes</a> <a class="p-2 text-muted" href="#">outdoor</a> <a
-					class="p-2 text-muted" href="#">shirt</a> <a class="p-2 text-muted"
-					href="#">pants</a> <a class="p-2 text-muted" href="#">new style</a>
-				<a class="p-2 text-muted" href="#">old style</a> <a
-					class="p-2 text-muted" href="#">order</a> <a class="p-2 text-muted"
-					href="#">QnA</a> <a class="p-2 text-muted" href="#">board</a> <a
-					class="p-2 text-muted" href="#">my page</a>
+				<a class="p-2 text-muted" href="/product/list?sex=F">woman</a> 
+				<a class="p-2 text-muted" href="/product/list?sex=M">man</a> 
+				<a class="p-2 text-muted" href="/product/list?category=top">shirt</a>
+				<a class="p-2 text-muted" href="/product/list?category=bottom">pants</a>
+				<a class="p-2 text-muted" href="/product/list?category=underwear">underwear</a>
+				<a class="p-2 text-muted" href="/product/list?category=shoes">shoes</a>
+				<a class="p-2 text-muted" href="/product/list?category=outfit">outfit</a>
+				<a class="p-2 text-muted" href="/product/list?category=etc">etc</a>
+				<a class="p-2 text-muted" href="#">order</a> 
+				<a class="p-2 text-muted" href="#">QnA</a> 
+				<a class="p-2 text-muted" href="/customer/mypage/${login.id}">notice</a> <a class="p-2 text-muted" href="#">my page</a>
 
 
 			</nav>

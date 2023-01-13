@@ -33,7 +33,9 @@
 	</select>
 	
 	<select id="idCheck" resultType="CustomerDTO">
-		SELECT id FROM tbl_customer WHERE id = #{id}	
+		SELECT * FROM
+		(SELECT id FROM tbl_customer UNION ALL SELECT id FROM tbl_deletedmember UNION ALL SELECT id FROM tbl_manager)
+		WHERE id=#{id}	
 	</select>
 
 	<insert id="insert">

@@ -81,6 +81,8 @@
 		</table>
 
 		<div class="menus text-center mt-5" id="customeroption">
+			<button type="button" class="btn btn-success" id="cmypage">마이페이지
+			</button>
 			<button type="button" class="btn btn-success" id="cupdate">회원
 				정보 변경</button>
 			<button type="button" class="btn btn-success" id="cpwupdate">비밀번호
@@ -99,6 +101,10 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
+			
+			$("#customeroption").on("click", "#cmypage", function() {
+				location.assign("/customer/mypage/${dto.id}");
+			});
 			
 			$("#customeroption").on("click", "#cdelete", function() {
 				location.assign("/customer/delete/${dto.id}");
