@@ -101,7 +101,7 @@
 			</div>
 
 
-			<div class="menus text-center mt-5">
+			<div class="menus text-center mt-5" id="divinsert">
 				
 					<button type="submit" class="btn btn-primary" id="divsubmit">가입</button>
 			
@@ -117,8 +117,8 @@
 		$(document).ready(function() {
 			let idCheck = false;
 			
-			$("#divsubmitexit").on("click", "button[type='submit']", function() {
-				location.assign("/home");
+			$("#divinsert").on("click", "#divsubmitexit", function() {
+				location.assign("/");
 			});
 			
 			$("#dividp").on("input", "#id", function() {
@@ -156,7 +156,7 @@
 			});
 			
 			
-			$("#divsubmitp").on("click", "button[type='submit']", function(event) {
+			$("#divinsert").on("click", "#divsubmit", function(event) {
 				event.preventDefault();
 				msg = null;
 				if (idCheck) {

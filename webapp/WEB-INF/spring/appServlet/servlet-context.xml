@@ -38,13 +38,12 @@
 		</interceptor>
 		
 		<interceptor>
+			<mapping path="/customer/delete"/>
 			<mapping path="/customer/logout"/>
-			<mapping path="/customer/delete/**"/>
 			<beans:ref bean="logoutInterceptor"/>
 		</interceptor>
 		
 		<interceptor>
-			
 			<mapping path="/customer/delete/**"/>
 			<mapping path="/customer/update/**"/>
 			<mapping path="/customer/read/**"/>
