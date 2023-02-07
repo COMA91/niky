@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.co.shop.manager">
+
+	<select id="checkPw" resultType="ManagerDTO">
+		SELECT * FROM tbl_manager WHERE id=#{id} AND pw=#{pw}
+	
+	</select>
+
+	<delete id="delete">
+		DELETE FROM tbl_manager WHERE id=#{id} AND pw=#{pw}
+	</delete>
+	
+	<update id="updatePw">
+		UPDATE tbl_manager SET pw=#{pw1}
+		WHERE id=#{id} AND pw=#{pw}
+	</update>
+	
+
+	<update id="update">
+		UPDATE tbl_manager SET email=#{email},
+		phone=#{phone}, address=#{address}, department=#{department}, position=#{position}
+		WHERE id=#{id} AND pw=#{pw}
+	</update>
+
+	<select id="read" resultType="ManagerDTO">
+		SELECT id, name, email, phone, address, department, position, grade FROM tbl_manager WHERE id = #{id}
+	
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_manager (id, pw, name, email, phone, address, department, position)
+		VALUES (#{id}, #{pw}, #{name}, #{email}, #{phone}, #{address}, #{department}, #{position})
+	</insert>
+</mapper>
